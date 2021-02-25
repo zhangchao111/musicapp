@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es5",
+    "module": "commonjs",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
@@ -10,8 +10,12 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true,
+    "declarationMap": false,
+    "removeComments": true,
     "types": [
       "webpack-env"
     ],
@@ -21,7 +25,7 @@
       ]
     },
     "lib": [
-      "esnext",
+      "es6",
       "dom",
       "dom.iterable",
       "scripthost"
