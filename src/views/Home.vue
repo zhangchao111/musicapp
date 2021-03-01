@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="d1"></div>
+    <div class="d1"><span class="m_iconfont m_iconsousuo1"></span></div>
   </div>
 </template>
 
