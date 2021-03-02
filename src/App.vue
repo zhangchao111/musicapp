@@ -1,5 +1,4 @@
 <template>
-    ff
   <router-view/>
 </template>
 
