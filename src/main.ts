@@ -6,6 +6,7 @@ import '@/style/index.less'
 import '@/assets/font/iconfont.css'
 import './style/base/antd.less'
 import { registeGlobalComponent } from '@/components/index'
+
 import { loadAllPlugins } from '@/plugins/index'
 const app: ReturnType<typeof createApp> = createApp(App)
 /** 加载所有 Plugins */

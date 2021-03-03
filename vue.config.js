@@ -82,7 +82,8 @@ module.exports = {
         }
     },
     devServer: {
-        proxy: ''
+        proxy: '',
+        open:true
     },
     pluginOptions: {
         /** 全局加载less 的 webpack 插件  */
@@ -131,6 +132,14 @@ module.exports = {
                     'ant-design-vue': {
                         name: 'ant-design-vue',
                         test: /[\\/]node_modules[\\/]ant-design-vue[\\/]/
+                    },
+                    'swiper': {
+                        name: 'swiper',
+                        test: /[\\/]node_modules[\\/]swiper[\\/]/
+                    },
+                    'vue-awesome-swiper': {
+                        name: 'vue-awesome-swiper',
+                        test: /[\\/]node_modules[\\/]vue-awesome-swiper[\\/]/
                     },
                     moment: {
                         name: 'moment',
