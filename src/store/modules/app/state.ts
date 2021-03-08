@@ -5,7 +5,7 @@ import { Module } from 'vuex'
 const state = {
     language: 'zhCN',
     version: '0.0.1',
-
+    swiperList:[]
 }
 type AppStateType = typeof state
 

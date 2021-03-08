@@ -82,7 +82,11 @@ module.exports = {
         }
     },
     devServer: {
-        proxy: '',
+        proxy: {
+            '/api': {
+                target:'localhost:5000'
+            }
+        },
         open:true
     },
     pluginOptions: {

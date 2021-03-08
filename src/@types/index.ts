@@ -7,6 +7,9 @@ type ModuleType = {
     app: AppStateType
     user: UserStateType
 }
+// 所有的StateType
+export type StateType = ModuleType
+
 /** http请求响应格式  */
 export declare interface ApiResponse {
     errCode: number
@@ -31,8 +34,6 @@ export interface HttpListQuery {
     [key: string]: any
 }
 
-// 所有的StateType
-export type StateType = ModuleType
 
 
 
