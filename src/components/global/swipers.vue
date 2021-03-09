@@ -2,11 +2,7 @@
     <div class="warper">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"> 1 </div>
-                <div class="swiper-slide">2 </div>
-                <div class="swiper-slide">3 </div>
-                <div class="swiper-slide">4 </div>
-                <div class="swiper-slide">5 </div>
+                <div class="swiper-slide" v-for="(item,index) in switlist" :key="index"><img :src="item.imageUrl" alt=""> </div>
             </div>
             <!-- 如果需要分页器 -->
             <div class="swiper-pagination"></div>
@@ -16,20 +12,21 @@
 
 <script lang="ts">
 
-import {defineComponent,onMounted,reactive} from 'vue';
+import {defineComponent,onMounted,reactive,computed} from 'vue';
 import Swiper ,{Autoplay,Pagination}  from 'swiper';
 import 'swiper/swiper.less';
 import { StateType } from '@/@types'
 import { useStore } from 'vuex'
-import { setStoreState } from '@/store/utils'
 import { AppStateType } from '@/store/modules/app/state'
 
 Swiper.use([Autoplay,Pagination])
    export default defineComponent({
         components:{
         },
-
        setup(){
+           const store = useStore<StateType>()
+           store.dispatch('app/getSwiperList')
+           const switlist = computed(() => store.state.app.swiperList)
            onMounted(() => {
                new Swiper('.swiper-container', {
                    loop: true, // 循环模式选项
@@ -43,13 +40,9 @@ Swiper.use([Autoplay,Pagination])
                        clickable: true,
                    },
                });
-               const store = useStore<AppStateType>()
-               store.dispatch('app/getSwiperList')
-               console.log(store,99)
            });
-
            return{
-
+               switlist
            }
        }
    })
@@ -57,18 +50,29 @@ Swiper.use([Autoplay,Pagination])
 
 <style lang="less">
     .warper{
-        width:100%;
+        width:95%;
         height:3rem;
-        border:1px solid red;
+        margin:0px auto;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
         .swiper-container{
             width:100%;
             height:100%;
             position: relative;
-            .swiper-slide{
+            .swiper-wrapper{
                 width:100%;
                 height:100%;
-                background:blue;
+                .swiper-slide{
+                    width:100%;
+                    height:100%;
+                    img{
+                        width:100%;
+                        height:100%
+                    }
+                }
             }
+
             .swiper-pagination{
                 position: absolute;
                 bottom: 0px;
