@@ -1,7 +1,6 @@
 <template>
   <topNav></topNav>
   <swipers></swipers>
-
 </template>
 
 <script lang="ts">
