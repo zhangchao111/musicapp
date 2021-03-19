@@ -11,7 +11,7 @@ export default defineComponent({
   naem:'Home',
   components:{
     topNav,
-    swipers
+    swipers,
   },
   setup(){
 
